@@ -25,6 +25,7 @@ func GenerateCoverageStats(cfg Config) ([]Stats, error) {
 	}
 
 	fileStats := make([]Stats, 0, len(profiles))
+	fmt.Printf("excludes paths:%s\n", cfg.ExcludePaths)
 	excludeRules := compileExcludePathRules(cfg.ExcludePaths)
 
 	for _, profile := range profiles {

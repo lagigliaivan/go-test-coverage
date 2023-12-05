@@ -92,7 +92,7 @@ func ReportForGithubAction(w io.Writer, result AnalyzeResult) {
 	if !result.MeetsTotalCoverage {
 		title := "Total test coverage below threshold"
 		msg := fmt.Sprintf(
-			"%s: coverage: %d%%; threshold: %d%%",
+			"%s: coverage: %0.2f%%; threshold: %d%%",
 			title, result.TotalCoverage, result.Threshold.Total,
 		)
 		reportError(title, msg)
