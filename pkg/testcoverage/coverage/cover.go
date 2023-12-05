@@ -25,21 +25,15 @@ func GenerateCoverageStats(cfg Config) ([]Stats, error) {
 	}
 
 	fileStats := make([]Stats, 0, len(profiles))
-	fmt.Printf("excludes paths:%s\n", cfg.ExcludePaths)
 	excludeRules := compileExcludePathRules(cfg.ExcludePaths)
 
 	for _, profile := range profiles {
-		fmt.Printf("profile: %s\n", profile.FileName)
-
 		file, noPrefixName, err := findFile(profile.FileName, cfg.LocalPrefix)
 		if err != nil {
 			return nil, fmt.Errorf("could not find file [%s]: %w", profile.FileName, err)
 		}
 
-		fmt.Printf("file: %s\n", file)
-
 		if ok := matches(excludeRules, noPrefixName); ok {
-			fmt.Printf("excluded file: %s noPrefixName: %s\n ", file, noPrefixName)
 			continue // this file is excluded
 		}
 
