@@ -8,9 +8,9 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	. "github.com/vladopajic/go-test-coverage/v2/pkg/testcoverage"
-	"github.com/vladopajic/go-test-coverage/v2/pkg/testcoverage/badge"
-	"github.com/vladopajic/go-test-coverage/v2/pkg/testcoverage/badgestorer"
+	. "github.com/lagigliaivan/go-test-coverage/pkg/testcoverage"
+	"github.com/lagigliaivan/go-test-coverage/pkg/testcoverage/badge"
+	"github.com/lagigliaivan/go-test-coverage/pkg/testcoverage/badgestorer"
 )
 
 func Test_GenerateAndSaveBadge_NoAction(t *testing.T) {

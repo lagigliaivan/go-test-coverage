@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	. "github.com/vladopajic/go-test-coverage/v2/pkg/testcoverage/badge"
+	. "github.com/lagigliaivan/go-test-coverage/pkg/testcoverage/badge"
 )
 
 func Test_Generate(t *testing.T) {

@@ -9,8 +9,8 @@ import (
 	"strconv"
 	"text/tabwriter"
 
-	"github.com/vladopajic/go-test-coverage/v2/pkg/testcoverage/badge"
-	"github.com/vladopajic/go-test-coverage/v2/pkg/testcoverage/coverage"
+	"github.com/lagigliaivan/go-test-coverage/pkg/testcoverage/badge"
+	"github.com/lagigliaivan/go-test-coverage/pkg/testcoverage/coverage"
 )
 
 func ReportForHuman(w io.Writer, result AnalyzeResult) {

@@ -9,7 +9,7 @@ import (
 
 	yaml "gopkg.in/yaml.v3"
 
-	"github.com/vladopajic/go-test-coverage/v2/pkg/testcoverage/badgestorer"
+	"github.com/lagigliaivan/go-test-coverage/pkg/testcoverage/badgestorer"
 )
 
 var (

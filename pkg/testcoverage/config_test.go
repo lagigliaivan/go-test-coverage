@@ -7,7 +7,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"gopkg.in/yaml.v3"
 
-	. "github.com/vladopajic/go-test-coverage/v2/pkg/testcoverage"
+	. "github.com/lagigliaivan/go-test-coverage/pkg/testcoverage"
 )
 
 const nonEmptyStr = "any"

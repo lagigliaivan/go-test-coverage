@@ -4,7 +4,7 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/vladopajic/go-test-coverage/v2/pkg/testcoverage/path"
+	"github.com/lagigliaivan/go-test-coverage/pkg/testcoverage/path"
 )
 
 type Stats struct {

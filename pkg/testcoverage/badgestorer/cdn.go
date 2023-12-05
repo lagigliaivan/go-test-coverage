@@ -10,7 +10,7 @@ import (
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/s3"
 
-	"github.com/vladopajic/go-test-coverage/v2/pkg/testcoverage/badge"
+	"github.com/lagigliaivan/go-test-coverage/pkg/testcoverage/badge"
 )
 
 type CDN struct {

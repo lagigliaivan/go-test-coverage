@@ -5,7 +5,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	. "github.com/vladopajic/go-test-coverage/v2/pkg/testcoverage/badgestorer"
+	. "github.com/lagigliaivan/go-test-coverage/pkg/testcoverage/badgestorer"
 )
 
 func Test_Github_Error(t *testing.T) {

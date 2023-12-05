@@ -5,8 +5,8 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	. "github.com/vladopajic/go-test-coverage/v2/pkg/testcoverage/coverage"
-	"github.com/vladopajic/go-test-coverage/v2/pkg/testcoverage/testdata"
+	. "github.com/lagigliaivan/go-test-coverage/pkg/testcoverage/coverage"
+	"github.com/lagigliaivan/go-test-coverage/pkg/testcoverage/testdata"
 )
 
 const (
