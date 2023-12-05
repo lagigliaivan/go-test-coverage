@@ -1,17 +1,16 @@
-module github.com/lagigliaivan/go-test-coverage/v2
+module github.com/lagigliaivan/go-test-coverage
 
-// GO_VERSION: when changing go version update version in other places
 go 1.20
 
 require (
 	github.com/alexflint/go-arg v1.4.3
-	github.com/aws/aws-sdk-go v1.48.0
+	github.com/aws/aws-sdk-go v1.48.12
 	github.com/google/go-github/v56 v56.0.0
 	github.com/johannesboyne/gofakes3 v0.0.0-20230914150226-f005f5cc03aa
 	github.com/narqo/go-badge v0.0.0-20230821190521-c9a75c019a59
 	github.com/stretchr/testify v1.8.4
 	github.com/vladopajic/go-test-coverage/v2 v2.8.2
-	golang.org/x/exp v0.0.0-20231006140011-7918f672742d
+	golang.org/x/exp v0.0.0-20231127185646-65229373498e
 	golang.org/x/tools v0.16.0
 	gopkg.in/yaml.v3 v3.0.1
 )
