@@ -59,7 +59,7 @@ func makeCoverageGenFn(min, max int) func() (total, covered int64) {
 			total := int64(float64(100*covered) / float64(tc))
 
 			cp := coverage.CoveredPercentage(total, covered)
-			if cp >= min && cp <= max {
+			if cp >= float64(min) && cp <= float64(max) {
 				return total, covered
 			}
 		}

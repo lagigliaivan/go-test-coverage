@@ -10,7 +10,7 @@ import (
 	"github.com/lagigliaivan/go-test-coverage/pkg/testcoverage/badgestorer"
 )
 
-func generateAndSaveBadge(w io.Writer, cfg Config, totalCoverage int) error {
+func generateAndSaveBadge(w io.Writer, cfg Config, totalCoverage float64) error {
 	badge, err := badge.Generate(totalCoverage)
 	if err != nil {
 		return fmt.Errorf("generate badge: %w", err)

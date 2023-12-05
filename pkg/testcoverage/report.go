@@ -6,7 +6,6 @@ import (
 	"fmt"
 	"io"
 	"os"
-	"strconv"
 	"text/tabwriter"
 
 	"github.com/lagigliaivan/go-test-coverage/pkg/testcoverage/badge"
@@ -55,7 +54,7 @@ func reportIssuesForHuman(w io.Writer, coverageStats []coverage.Stats) {
 	fmt.Fprintf(w, "\n  below threshold:\tcoverage:\tthreshold:")
 
 	for _, stats := range coverageStats {
-		fmt.Fprintf(w, "\n  %s\t%d%%\t%d%%", stats.Name, stats.CoveredPercentage(), stats.Threshold)
+		fmt.Fprintf(w, "\n  %s\t%0.2f%%\t%d%%", stats.Name, stats.CoveredPercentage(), stats.Threshold)
 	}
 
 	fmt.Fprintf(w, "\n")
@@ -75,7 +74,7 @@ func ReportForGithubAction(w io.Writer, result AnalyzeResult) {
 	for _, stats := range result.FilesBelowThreshold {
 		title := "File test coverage below threshold"
 		msg := fmt.Sprintf(
-			"%s: coverage: %d%%; threshold: %d%%",
+			"%s: coverage: %0.2f%%; threshold: %d%%",
 			title, stats.CoveredPercentage(), stats.Threshold,
 		)
 		reportLineError(stats.Name, title, msg)
@@ -84,7 +83,7 @@ func ReportForGithubAction(w io.Writer, result AnalyzeResult) {
 	for _, stats := range result.PackagesBelowThreshold {
 		title := "Package test coverage below threshold"
 		msg := fmt.Sprintf(
-			"%s: package: %s; coverage: %d%%; threshold: %d%%",
+			"%s: package: %s; coverage: %0.2f%%; threshold: %d%%",
 			title, stats.Name, stats.CoveredPercentage(), stats.Threshold,
 		)
 		reportError(title, msg)
@@ -113,7 +112,7 @@ func SetGithubActionOutput(result AnalyzeResult) error {
 		return fmt.Errorf("could not open GitHub output file: %w", err)
 	}
 
-	totalStr := strconv.Itoa(result.TotalCoverage)
+	totalStr := fmt.Sprintf("0.2f", result.TotalCoverage)
 
 	return errors.Join(
 		setOutputValue(file, gaOutputTotalCoverage, totalStr),

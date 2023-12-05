@@ -1,7 +1,7 @@
 package badge
 
 import (
-	"strconv"
+	"fmt"
 
 	"github.com/narqo/go-badge"
 )
@@ -12,15 +12,15 @@ const (
 	label = "coverage"
 )
 
-func Generate(coverage int) ([]byte, error) {
+func Generate(coverage float64) ([]byte, error) {
 	return badge.RenderBytes( //nolint:wrapcheck // relax
 		label,
-		strconv.Itoa(coverage)+"%",
+		fmt.Sprintf("%0.2f", coverage)+"%",
 		badge.Color(Color(coverage)),
 	)
 }
 
-func Color(coverage int) string {
+func Color(coverage float64) string {
 	//nolint:gomnd // relax
 	switch {
 	case coverage >= 100:

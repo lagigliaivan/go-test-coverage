@@ -13,7 +13,7 @@ type AnalyzeResult struct {
 	FilesBelowThreshold    []coverage.Stats
 	PackagesBelowThreshold []coverage.Stats
 	MeetsTotalCoverage     bool
-	TotalCoverage          int
+	TotalCoverage          float64
 }
 
 func (r *AnalyzeResult) Pass() bool {
@@ -44,7 +44,7 @@ func checkCoverageStatsBelowThreshold(
 			thr = override
 		}
 
-		if s.CoveredPercentage() < thr {
+		if s.CoveredPercentage() < float64(thr) {
 			s.Threshold = thr
 			belowThreshold = append(belowThreshold, s)
 		}

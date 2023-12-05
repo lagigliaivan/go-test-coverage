@@ -53,7 +53,7 @@ func Analyze(cfg Config, coverageStats []coverage.Stats) AnalyzeResult {
 	)
 
 	totalStats := coverage.CalcTotalStats(coverageStats)
-	meetsTotalCoverage := len(coverageStats) == 0 || totalStats.CoveredPercentage() >= thr.Total
+	meetsTotalCoverage := len(coverageStats) == 0 || totalStats.CoveredPercentage() >= float64(thr.Total)
 
 	return AnalyzeResult{
 		Threshold:              thr,

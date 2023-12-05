@@ -14,12 +14,12 @@ type Stats struct {
 	Threshold int
 }
 
-func (s Stats) CoveredPercentage() int {
+func (s Stats) CoveredPercentage() float64 {
 	return CoveredPercentage(s.Total, s.Covered)
 }
 
 //nolint:gomnd // relax
-func CoveredPercentage(total, covered int64) int {
+func CoveredPercentage(total, covered int64) float64 {
 	if total == 0 {
 		return 0
 	}
@@ -28,7 +28,7 @@ func CoveredPercentage(total, covered int64) int {
 		return 100
 	}
 
-	return int(float64(covered*100) / float64(total))
+	return float64(covered*100) / float64(total)
 }
 
 func stripPrefix(name, prefix string) string {

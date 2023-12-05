@@ -34,6 +34,7 @@ func GenerateCoverageStats(cfg Config) ([]Stats, error) {
 		}
 
 		if ok := matches(excludeRules, noPrefixName); ok {
+			fmt.Printf("excluded file: %s noPrefixName: %s\n ", file, noPrefixName)
 			continue // this file is excluded
 		}
 
