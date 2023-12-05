@@ -143,8 +143,14 @@ func (a *args) overrideConfig(cfg testcoverage.Config) (testcoverage.Config, err
 
 //nolint:forbidigo // relax
 func main() {
-	fmt.Printf("this version was compiled from a lagigliaivan fork.")
-	fmt.Printf("To use the original please go to https://github.com/vladopajic/go-test-coverage")
+	fmt.Printf(` ____  _  _  __  ____    __  ____     __     ____  __  ____  __ _ 
+(_  _)/ )( \(  )/ ___)  (  )/ ___)   / _\   (  __)/  \(  _ \(  / )
+  )(  ) __ ( )( \___ \   )( \___ \  /    \   ) _)(  O ))   / )  ( 
+ (__) \_)(_/(__)(____/  (__)(____/  \_/\_/  (__)  \__/(__\_)(__\_)
+`)
+
+	fmt.Printf("This version was compiled from a lagigliaivan fork.\n")
+	fmt.Printf("To use the original one please go to https://github.com/vladopajic/go-test-coverage\n")
 
 	cfg, err := readConfig()
 	if err != nil {

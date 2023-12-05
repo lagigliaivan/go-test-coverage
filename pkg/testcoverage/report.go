@@ -43,7 +43,7 @@ func ReportForHuman(w io.Writer, result AnalyzeResult) {
 	fmt.Fprintf(tabber, "\nTotal coverage threshold (%d%%) satisfied:\t", thr.Total)
 	fmt.Fprint(tabber, statusStr(result.MeetsTotalCoverage))
 
-	fmt.Fprintf(tabber, "\nTotal test coverage: %d%%\n", result.TotalCoverage)
+	fmt.Fprintf(tabber, "\nTotal test coverage: %0.2f%%\n", result.TotalCoverage)
 }
 
 func reportIssuesForHuman(w io.Writer, coverageStats []coverage.Stats) {
